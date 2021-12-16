@@ -1,0 +1,18 @@
+﻿@model FormProcessing.Models.FormProcess
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.TextBoxFor(m => m.Days)
+
+    @Html.TextBoxFor(m => m.Months, "{0:yyyy-MM-dd}", new { type = "date" })
+
+
+    <input type="submit" value="Submit" id="btnSubmit" />
+
+    @Html.DisplayFor(m => m.Result)
+}
+
